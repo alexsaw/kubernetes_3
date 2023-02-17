@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-app-loadbalancer
+spec:
+  selector:
+    app: my-app
+  ports:
+    - port: 1337 # external port for host (localhost)
+      targetPort: 3000 # port the containers are using for external port
+  type: LoadBalancer
